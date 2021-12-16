@@ -16,7 +16,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     try:
-        comment = request.form.values()
+        comment = np.array(str(request.form.values()))
         prediction = model.predict(comment)
 
     except Exception:
