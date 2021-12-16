@@ -16,9 +16,9 @@ def predict():
     For rendering results on HTML GUI
     '''
     try:
-        comment = str(request.form['inputText'])
+        comment = np.array(str(request.form['inputText']))
         print(comment)
-        reshaped_comment = np.array(comment).reshape(-1, 1)
+        reshaped_comment = comment.reshape(-1, 1)
         print(reshaped_comment)
         prediction = model.predict(reshaped_comment)
 
