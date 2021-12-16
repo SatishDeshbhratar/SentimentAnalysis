@@ -1,6 +1,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
+import traceback
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
@@ -14,11 +15,13 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
+    try:
+        comment = request.form.values()
+        prediction = model.predict(comment)
 
-    output = round(prediction[0], 2)
+        output = prediction
+    except Exception:
+        traceback.print_exc()
 
     return render_template('index.html', prediction_text='Sentiment analysis is - {}'.format(output))
 
