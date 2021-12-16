@@ -18,7 +18,9 @@ def predict():
     try:
         comment = str(request.form['inputText'])
         print(comment)
-        prediction = model.predict(comment)
+        reshaped_comment = np.array(comment).reshape(-1, 1)
+        print(reshaped_comment)
+        prediction = model.predict(reshaped_comment)
 
     except Exception:
         traceback.print_exc()
