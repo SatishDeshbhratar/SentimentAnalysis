@@ -127,7 +127,6 @@ holoviews==1.14.6
 html5lib==1.0.1
 httpimport==0.5.18
 httplib2==0.17.4
-httplib2shim==0.0.3
 ideep4py==2.0.0.post3
 idna==2.10
 imageio==2.4.1
