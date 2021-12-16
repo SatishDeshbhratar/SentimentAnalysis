@@ -17,7 +17,7 @@ def predict():
     '''
     try:
         comment = [np.array(str(request.form.values()))]
-        print(jsonify(comment))
+        print(comment)
         prediction = model.predict(comment)
 
     except Exception:
