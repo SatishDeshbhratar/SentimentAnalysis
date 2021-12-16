@@ -17,6 +17,7 @@ def predict():
     '''
     try:
         comment = [np.array(str(request.form.values()))]
+        print(jsonify(comment))
         prediction = model.predict(comment)
 
     except Exception:
@@ -27,3 +28,4 @@ def predict():
 
 if __name__ == "__main__":
     app.run(debug=True)
+    app.config["DEBUG"] = True
