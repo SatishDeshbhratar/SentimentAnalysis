@@ -19,11 +19,10 @@ def predict():
         comment = request.form.values()
         prediction = model.predict(comment)
 
-        output = prediction
     except Exception:
         traceback.print_exc()
 
-    return render_template('index.html', prediction_text='Sentiment analysis is - {}'.format(output))
+    return render_template('index.html', prediction_text='Sentiment analysis is - {}'.format(prediction))
 
 
 if __name__ == "__main__":
