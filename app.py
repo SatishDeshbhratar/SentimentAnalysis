@@ -2,6 +2,7 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 import traceback
+import pandas as pd
 
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
@@ -18,7 +19,7 @@ def predict():
     try:
         comment = [str(request.form['inputText'])]
         print(comment)
-        reshaped_comment = comment.reshape(-1, 1)
+        reshaped_comment = df = pd.DataFrame(comment)
         print(reshaped_comment)
         prediction = model.predict(reshaped_comment)
 
