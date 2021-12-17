@@ -19,7 +19,7 @@ def predict():
     try:
         comment = [str(request.form['inputText'])]
         print(comment)
-        reshaped_comment = df = pd.DataFrame(comment)
+        reshaped_comment = [comment]
         print(reshaped_comment)
         prediction = model.predict(reshaped_comment)
 
