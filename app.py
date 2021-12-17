@@ -9,7 +9,7 @@ import pickle
 # load the model from disk
 filename = 'model.pkl'
 clf = pickle.load(open(filename, 'rb'))
-cv=pickle.load(open('tranform.pkl','rb'))
+cv=pickle.load(open('tv_transform.pkl','rb'))
 app = Flask(__name__)
 
 @app.route('/')
