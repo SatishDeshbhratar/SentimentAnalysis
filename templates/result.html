@@ -19,13 +19,13 @@
         {% if prediction == 1%}
         <h2>Polarity - </h2>
         <h2 style="color:blue;">Positive </h2>
-        <h2>Confidence Score - {{ confidence }}</h2>
-        <h2 style="color:blue;"></h2>
+        <h2>Confidence Score - </h2>
+        <h2 style="color:blue;">{{ confidence[0][1] }}</h2>
         {% elif prediction == 0%}
         <h2>Polarity - </h2>
         <h2 style="color:red;">Negative</h2>
-        <h2>Confidence Score - {{ confidence }}</h2>
-        <h2 style="color:red;">0</h2>
+        <h2>Confidence Score - </h2>
+        <h2 style="color:red;">{{ confidence[0][0] }}</h2>
 	{% endif %}
 
 	</div>
