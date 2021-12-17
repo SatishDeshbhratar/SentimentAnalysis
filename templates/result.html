@@ -28,10 +28,10 @@
                     <div class="results">
                         {% if prediction == 1%}
                         <h2>Polarity - Positive</h2>
-                        <h2>Confidence Score - {{ confidence[0][1] }}</h2>
+                        <h2>Confidence Score - {{ confidence }}</h2>
                         {% elif prediction == 0%}
                         <h2>Polarity - Negative</h2>
-                        <h2>Confidence Score - {{ confidence[0][0] }}</h2>
+                        <h2>Confidence Score - {{ confidence }}</h2>
                         {% endif %}
                     </div>
                 </div>
