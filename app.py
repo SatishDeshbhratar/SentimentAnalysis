@@ -23,7 +23,8 @@ def predict():
 		data = [message]
 		vect = cv.transform(data).toarray()
 		my_prediction = clf.predict(vect)
-        confidence_score = round(clf.predict_proba(vect),2)
+		confidence_score = clf.predict_proba(vect)
+		confidence_score = round(confidence_score,2)
 	return render_template('result.html',prediction = my_prediction, confidence = confidence_score)
 
 if __name__ == '__main__':
