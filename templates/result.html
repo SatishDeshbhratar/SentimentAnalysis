@@ -3,32 +3,42 @@
 <head>
 	<title></title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
 
 	<header>
 		<div class="container">
 		
-		<h2>Sentiment analysis of reviews</h2>
+
 		
 	</div>
 	</header>
-	<p style="color:blue;font-size:20;text-align: center;"><b>Results for Comment</b></p>
-	<div class="results">
-		
-        {% if prediction == 1%}
-        <h2>Polarity - </h2>
-        <h2 style="color:blue;">Positive </h2>
-        <h2>Confidence Score - </h2>
-        <h2 style="color:blue;">{{ confidence[0][1] }}</h2>
-        {% elif prediction == 0%}
-        <h2>Polarity - </h2>
-        <h2 style="color:red;">Negative</h2>
-        <h2>Confidence Score - </h2>
-        <h2 style="color:red;">{{ confidence[0][0] }}</h2>
-	{% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="card mt-5 mx-auto" style="width:500px">
 
-	</div>
+                <div class="card-body">
+                    <h2>Sentiment analysis of reviews</h2>
+                    <div class="card-title mt-3">
+                        Results for Comment
+                    </div>
+                    <hr>
+                    <div class="results">
+                        {% if prediction == 1%}
+                        <h2>Polarity - Positive</h2>
+                        <h2>Confidence Score - {{ confidence[0][1] }}</h2>
+                        {% elif prediction == 0%}
+                        <h2>Polarity - Negative</h2>
+                        <h2>Confidence Score - {{ confidence[0][0] }}</h2>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 </html>
